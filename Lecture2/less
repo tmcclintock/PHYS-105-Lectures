@@ -1,0 +1,1000 @@
+    3  pdflatex lecture5.tex
+    4  pdflatex lecture5.tex
+    5  pdflatex lecture5.tex
+    6  pdflatex lecture5.tex
+    7  pdflatex lecture5.tex
+    8  pdflatex lecture5.tex
+    9  cd ../Lecture4/
+   10  pdflatex lecture4.tex
+   11  cd ../Lecture5/
+   12  pdflatex lecture5.tex
+   13  pdflatex lecture5.tex
+   14  pdflatex lecture5.tex
+   15  pdflatex lecture5.tex
+   16  cp lecture5.tex oldlecture5.tex
+   17  emacs oldlecture5.tex  &
+   18  pdflatex lecture5.tex
+   19  pdflatex lecture5.tex
+   20  pdflatex lecture5.tex
+   21  pdflatex lecture5.tex
+   22  pdflatex lecture5.tex
+   23  pdflatex lecture5.tex
+   24  pdflatex lecture5.tex
+   25  mv oldlecture5.tex lecture5.tex
+   26  emacs lecture5.tex &
+   27  pdflatex lecture5.tex
+   28  pdflatex lecture5.tex
+   29  pdflatex lecture5.tex
+   30  pdflatex lecture5.tex
+   31  pdflatex lecture5.tex
+   32  pdflatex lecture5.tex
+   33  pdflatex lecture5.tex
+   34  pdflatex lecture5.tex
+   35  pdflatex lecture5.tex
+   36  pdflatex lecture5.tex
+   37  pdflatex lecture5.tex
+   38  pdflatex lecture5.tex
+   39  pdflatex lecture5.tex
+   40  pdflatex lecture5.tex
+   41  pdflatex lecture5.tex
+   42  pdflatex lecture5.tex
+   43  pdflatex lecture5.tex
+   44  pdflatex lecture5.tex
+   45  pdflatex lecture5.tex
+   46  cd ../
+   47  ls
+   48  mkdir Lecture6
+   49  cd Lecture6/
+   50  cp ../Lecture5/lecture5.tex .
+   51  cp ../Lecture5/wildcat* .
+   52  cp ../Lecture5/hello.c .
+   53  ls
+   54  mv lecture5.tex lecture6.tex
+   55  emacs lecture6.tex &
+   56  cd ..
+   57  cd ..
+   58  cd ..
+   59  cd Statistics/Presentation2/
+   60  ls
+   61  ipython notebook
+   62  cd
+   63  cd Desktop/
+   64  cd EduardoProjects/
+   65  ls
+   66  mkdir FittingStuff
+   67  cd FittingStuff/
+   68  ipython notebook
+   69  ssh tmcclintock@calvin.physics.arizona.edu
+   70  pip install triangle_plot
+   71  pip install --upgrade pip
+   72  cd Desktop/EduardoProjects/
+   73  ls
+   74  cd FittingStuff/
+   75  ipython notebook
+   76  ssh -X library@calvin.physics.arizona.edu
+   77  ssh -X tmcclintock@calvin.physics.arizona.edu
+   78  ssh -X tmcclintock@calvin.physics.arizona.edu
+   79  python
+   80  python
+   81  python
+   82  cd Desktop/EduardoProjects/FittingStuff/
+   83  ls
+   84  ipython notebook
+   85  cd Desktop/
+   86  ls
+   87  ls Statistics/
+   88  ls
+   89  cd EduardoProjects/
+   90  python
+   91  cd FittingStuff/
+   92  ls
+   93  ipython notebook
+   94  cd
+   95  cd Desktop/Class_Notes/PHYS105_Fall_2015/
+   96  ls
+   97  cd Lecture6/
+   98  ls
+   99  cd
+  100  cd Desktop/EduardoProjects/FittingStuff/
+  101  ls
+  102  ipython notebook
+  103  ipython notebook
+  104  ssh -X tmcclintock@calvin.physics.arizona.edu
+  105  ssh -X tmcclintock@calvin.physics.arizona.edu
+  106  ssh -X tmcclintock@calvin.physics.arizona.edu
+  107  cd Desktop/
+  108  ls
+  109  cd galaxy_ML/
+  110  ls
+  111  ls -ltrh
+  112  exit
+  113  cd Desktop/
+  114  ls
+  115  cd EduardoProjects/
+  116  ls
+  117  cd ..
+  118  ssh -X tmcclintock@calvin.physics.arizona.edu:
+  119  ssh -X tmcclintock@calvin.physics.arizona.edu
+  120  cd Desktop/galaxy_ML/
+  121  ls
+  122  ipython notebook
+  123  ipython notebook
+  124  cd Desktop/EduardoProjects/FittingStuff/
+  125  ls
+  126  emacs FILE1.txt &
+  127  python
+  128  cd Desktop/
+  129  tar xvzf BlackBox_MatterPowerSpectrum.tar 
+  130  tar xvzf BlackBox_MatterPowerSpectrum.tar 
+  131  rm BlackBox_MatterPowerSpectrum.tar 
+  132  cd Desktop/EduardoProjects/FittingStuff/
+  133  ipython notebook
+  134  ipython notebook
+  135  ssh -X  tmcclintock@calvin.physics.arizona.edu
+  136  ssh -X tmcclintock@calvin.physics.arizona.edu
+  137  python
+  138  cd Desktop/EduardoProjects/FittingStuff/
+  139  ls
+  140  ipython notebook
+  141  cd ..
+  142  ls
+  143  cd ..
+  144  mkdir Github_stuff
+  145  cd Github_stuff/
+  146  git
+  147  git pull https://github.com/tmcclintock/FrisPy
+  148  git checkout https://github.com/tmcclintock/FrisPy
+  149  git
+  150  git clone https://github.com/tmcclintock/FrisPy
+  151  ls
+  152  cd FrisPy/
+  153  ls
+  154  emacs README.md &
+  155  mkdir Old_Python_Animation
+  156  cd Old_Python_Animation/
+  157  cp ../../../FrisbeeSim/3DSim/Version6/Animation.py .
+  158  python Animation.py 
+  159  cd ..
+  160  ls
+  161  mkdir src
+  162  mkdir data
+  163  cd src/
+  164  ls
+  165  cd ..
+  166  cd src/
+  167  ls
+  168  touch equations_of_motion.c
+  169  emacs equations_of_motion.c &
+  170  emacs ../Old_Python_Animation/Animation.py &
+  171  touch coefficients.c
+  172  emacs coefficients.c &
+  173  cd ../Old_Python_Animation/
+  174  cp ../../../FrisbeeSim/3DSim/Version6/FrisCarlo.py .
+  175  emacs FrisCarlo.py &
+  176  cd ../src/
+  177  cp coefficients.c coefficients.h
+  178  emacs coefficients.h &
+  179  emacs constants.h &
+  180  gcc equations_of_motion.c
+  181  gcc equations_of_motion.c -lm
+  182  gcc equations_of_motion.c -lm
+  183  emacs coefficients.c &
+  184  cp coefficients.c coefficients.h
+  185  emacs coefficients.h &
+  186  gcc equations_of_motion.c -lm
+  187  cd ..
+  188  ls
+  189  cd ..
+  190  cd FrisPy/
+  191  git add -A
+  192  git commit -m "started writing the equations of motion. also added constants and coefficients"
+  193  git push
+  194  cd Desktop/FrisbeeSim/
+  195  ls
+  196  cd 3DSim/
+  197  ls
+  198  cd Version
+  199  cd Version6/
+  200  ls
+  201  ls
+  202  cd Desktop/Statistics/
+  203  ls
+  204  cd Presentation2/
+  205  s
+  206  ls
+  207  exit
+  208  ipython notebook
+  209  cd Desktop/Github_stuff/
+  210  ls
+  211  cd FrisPy/
+  212  git status
+  213  ls
+  214  git pull
+  215  ls
+  216  git status
+  217  python FrisPy.py 
+  218  python FrisPy.py animation
+  219  cd Animation/
+  220  ls
+  221  emacs FrisPy_Animation.py &
+  222  emacs ../Old_Python_Animation/Animation.py &
+  223  emacs ../setup/frispy_setup.py &
+  224  emacs ../FrisPy.py &
+  225  cd ../setup/
+  226  mv frispy_setup.py FrisPy_setup.py
+  227  cd ..
+  228  cd Animation/
+  229  emacs ../setup/FrisPy_setup.py &
+  230  cd ../
+  231  ls
+  232  touch config.txt
+  233  mv config.txt config
+  234  emacs config &
+  235  ls
+  236  cd setup/
+  237  ls
+  238  touch config.py
+  239  mv FrisPy_setup.py setup.py
+  240  mv ../config ../config_file
+  241  rm ../config~ 
+  242  emacs config.py &
+  243  cd ..
+  244  python FrisPy.py 
+  245  python FrisPy.py 
+  246  ls setup/
+  247  python FrisPy.py 
+  248  python FrisPy.py 
+  249  python FrisPy.py 
+  250  python FrisPy.py animate config_file
+  251  python FrisPy.py animation config_file
+  252  python FrisPy.py animation config_file
+  253  emacs MCMC/FrisPy_MCMC.py &
+  254  python FrisPy.py animation config_file
+  255  python FrisPy.py animation config_file
+  256  ls setup/
+  257  ls
+  258  git status
+  259  git add -A
+  260  git commit -m "changed names of setup files. Created the config.py file to read the newly created config_file, which the user will use to run the program. Currently broken with importing into subdirectories using imp."
+  261  git push
+  262  git status
+  263  git push
+  264  cd Animation/
+  265  python
+  266  python FrisPy_Animation.py
+  267  python FrisPy_Animation.py
+  268  python FrisPy_Animation.py
+  269  python FrisPy_Animation.py
+  270  ls ../setup/
+  271  emacs ../setup/setup.py &
+  272  python FrisPy_Animation.py
+  273  python FrisPy_Animation.py
+  274  python FrisPy_Animation.py
+  275  python FrisPy_Animation.py
+  276  python FrisPy_Animation.py
+  277  python FrisPy_Animation.py
+  278  python FrisPy_Animation.py
+  279  cd ..
+  280  python FrisPy.py animation config_file
+  281  python FrisPy.py animation config_file
+  282  python FrisPy.py animation config_file
+  283  python FrisPy.py animation config_file
+  284  python FrisPy.py animation config_file
+  285  python FrisPy.py animation config_file
+  286  python FrisPy.py animation config_file
+  287  python
+  288  python FrisPy.py animation config_file
+  289  python FrisPy.py animation config_file
+  290  python FrisPy.py animation config_file
+  291  python FrisPy.py animation config_file
+  292  ls
+  293  ls setup/
+  294  python FrisPy.py animation config_file
+  295  mv setup/ setup_dir
+  296  python FrisPy.py animation config_file
+  297  cd Animation/
+  298  ls
+  299  touch __init__.py
+  300  cd ../MCMC/
+  301  touch __init__.py
+  302  cd ../setup_dir/
+  303  touch __init__.py
+  304  cd ..
+  305  python FrisPy.py animation config_file
+  306  python FrisPy.py animation config_file
+  307  python FrisPy.py animation config_file
+  308  python FrisPy.py mcmc config_file
+  309  ls
+  310  mv setup_dir/ setup
+  311  python FrisPy.py animation config_file
+  312  python FrisPy.py animation config_file
+  313  python FrisPy.py animation config_file
+  314  ls setup/
+  315  python FrisPy.py animation config_file
+  316  python FrisPy.py animation config_file
+  317  emacs MCMC/FrisPy_MCMC.py &
+  318  ls
+  319  cd Animation/
+  320  ls
+  321  rm c
+  322  ls
+  323  cd ..
+  324  python FrisPy.py animation config_file
+  325  ls Animation/
+  326  cd MCMC/
+  327  ls
+  328  cd ../setup/
+  329  ls
+  330  rm *~
+  331  ls
+  332  cd ..
+  333  git status
+  334  git add -A
+  335  git commit -m "added __init__.py files in order to make the import structure correct."
+  336  git push
+  337  git status
+  338  emacs setup/config.py &
+  339  python FrisPy.py animation config_file
+  340  python FrisPy.py animation config_file
+  341  emacs config_file &
+  342  emacs config_file &
+  343  python FrisPy.py animation config_file
+  344  python FrisPy.py animation config_file
+  345  python FrisPy.py animation config_file
+  346  python FrisPy.py animation config_file
+  347  python FrisPy.py animation config_file
+  348  python FrisPy.py animation config_file
+  349  python FrisPy.py animation config_file
+  350  python FrisPy.py animation config_file
+  351  emacs config_file &
+  352  emacs config_file &
+  353  python FrisPy.py animation config_file
+  354  python FrisPy.py animation config_file
+  355  python FrisPy.py animation
+  356  python FrisPy.py animation
+  357  python FrisPy.py animation
+  358  python FrisPy.py animation config_file
+  359  python FrisPy.py animation config_file
+  360  emacs setup/setup.py &
+  361  less config_file 
+  362  ls
+  363  cd data/
+  364  ls
+  365  cd ..
+  366  cd params/
+  367  ls
+  368  mv initial_params.txt params.txt
+  369  cd ..
+  370  emacs config_file &
+  371  python FrisPy.py animation config_file
+  372  python FrisPy.py animation config_file
+  373  python FrisPy.py animation config_file
+  374  python FrisPy.py animation config_file
+  375  python FrisPy.py animation config_file
+  376  python FrisPy.py animation config_file
+  377  emacs config_file &
+  378  cd data/
+  379  ls
+  380  touch initial_conditions.txt
+  381  emacs initial_conditions.txt &
+  382  cd ..
+  383  python FrisPy.py animation config_file
+  384  python FrisPy.py animation config_file
+  385  python FrisPy.py animation config_file
+  386  python FrisPy.py animation config_file
+  387  python FrisPy.py animation config_file
+  388  python FrisPy.py animation config_file
+  389  python FrisPy.py animation config_file
+  390  python FrisPy.py animation config_file
+  391  python FrisPy.py animation config_file
+  392  python FrisPy.py animation config_file
+  393  python FrisPy.py animation config_file
+  394  python FrisPy.py animation config_file
+  395  git status
+  396  git add -A
+  397  git commit -m "in the animation routine the parameters and initial conditions are now read in. Added a read_params_and_initial_conditions routine in setup as well as a routine to read the initial conditions."
+  398  git push
+  399  cd Animation/
+  400  ls
+  401  cd ..
+  402  ls
+  403  emacs src/equations_of_motion.c &
+  404  cd data/
+  405  python
+  406  cd ..
+  407  python FrisPy.py animation config_file
+  408  python FrisPy.py animation config_file
+  409  python FrisPy.py animation config_file
+  410  python FrisPy.py animation config_file
+  411  python FrisPy.py animation config_file
+  412  git status
+  413  git add -A
+  414  git commit -m "changed messages in the setup.py routines so that the information is more clear to the user and better formatted."
+  415  git config --global user.name "Tom McClintock"
+  416  git config --global user.email "tmcclintock@email.arizona.edu"
+  417  git push
+  418  git status
+  419  git status
+  420  git add -A
+  421  git commit -a
+  422  git commit -m "added a comment in FrisPy_Animation for the next step"
+  423  git push
+  424  python
+  425  python
+  426  touch create_data_file.py
+  427  emacs create_data_file.py &
+  428  python create_data_file.py
+  429  touch test.py
+  430  emacs test.py &
+  431  python test.py
+  432  python test.py
+  433  python test.py
+  434  python test.py
+  435  python test.py
+  436  python create_data_file.py
+  437  python create_data_file.py
+  438  ls
+  439  less dsig_data_2.txt 
+  440  python create_data_file.py
+  441  less dsig_data_2.txt 
+  442  less cov_2.txt 
+  443  less dsig_data_2.txt 
+  444  less cov_2.txt 
+  445  cp dsig_data_2.txt tmcclintock@calvin.physics.arizona.edu:~/
+  446  scp dsig_data_2.txt tmcclintock@calvin.physics.arizona.edu:~/
+  447  scp cov_2.txt tmcclintock@calvin.physics.arizona.edu:~/
+  448  ls
+  449  cd ..
+  450  cd Desktop/
+  451  scp subsamp_code.tar.gz tmcclintock@calvin.physics.arizona.edu:~/
+  452  ssh -X tmcclintock@calvin.physics.arizona.edu
+  453  ssh -X tmcclintock@calvin.physics.arizona.edu
+  454  cd Desktop/EduardoProjects/
+  455  ls
+  456  cd Real_WL_data/
+  457  ls
+  458  cd ..
+  459  scp -r Real_WL_data/ tmcclintock@calvin.physics.arizona.edu:~/
+  460  ssh -X tmcclintock@calvin.physics.arizona.edu
+  461  ls
+  462  cd Desktop/
+  463  ls
+  464  cd PythonTests/
+  465  ls
+  466  cd SimpleShared/
+  467  ls
+  468  less testhello.c 
+  469  less wrappertest.py
+  470  exit
+  471  ssh -X tmcclintock@calvin.physics.arizona.edu
+  472  ls
+  473  cd Desktop/
+  474  ls
+  475  clear
+  476  emacs test.py 
+  477  emacs test.py 
+  478  cd Desktop/
+  479  touch bashtest.sh
+  480  emacs bashtest.sh &
+  481  ./bashtest.sh
+  482  chmod u+x bashtest.sh
+  483  ./bashtest.sh 
+  484  ./bashtest.sh 
+  485  emacs bashtest.sh &
+  486  ls
+  487  cd Desktop/
+  488  ls
+  489  cd Github_stuff/
+  490  ls
+  491  cd FrisPy/
+  492  ls
+  493  git status
+  494  cd Desktop/
+  495  tar cvzf plots.tgz BOUNDS_PLOTS/
+  496  cd Desktop/
+  497  ./bashtest.sh
+  498  emacs bashtest.sh&
+  499  ./bashtest.sh
+  500  ./bashtest.sh
+  501  ./bashtest.sh
+  502  ./bashtest.sh
+  503  ./bashtest.sh
+  504  ./bashtest.sh
+  505  ./bashtest.sh
+  506  ./bashtest.sh
+  507  ssh -X tmcclintock@calvin.physics.arizona.edu
+  508  touch run_all
+  509  emacs run_all &
+  510  emacs run_nbody &
+  511  emacs run_xi &
+  512  ls
+  513  emacs run_xi &
+  514  emacs run_nbody &
+  515  touch create_treecorr_BOUNDS.py
+  516  emacs create_treecorr_BOUNDS.py &
+  517  python create_treecorr_BOUNDS.py 13.6_13.8
+  518  python create_treecorr_BOUNDS.py 13.6_13.8
+  519  python create_treecorr_BOUNDS.py 13.6_13.8
+  520  python create_treecorr_BOUNDS.py
+  521  python create_treecorr_BOUNDS.py 13.6_13.8
+  522  python create_treecorr_BOUNDS.py 13.6_13.8
+  523  emacs nbody_output_13.6_13.8.txt &
+  524  python create_treecorr_BOUNDS.py 13.6_13.8
+  525  emacs nbody_13.6_13.8_best_fit.txt &
+  526  python create_treecorr_BOUNDS.py 13.6_13.8
+  527  python create_treecorr_BOUNDS.py 13.6_13.8
+  528  python create_treecorr_BOUNDS.py 13.6_13.8
+  529  emacs treecorr_13.6_13.8.ini &
+  530  emacs treecorr_13.6_13.8.ini &
+  531  python create_treecorr_BOUNDS.py 13.6_13.8
+  532  python create_treecorr_BOUNDS.py 13.6_13.8
+  533  ls
+  534  less TEMPtreecorr_13.6_13.8.ini 
+  535  python create_treecorr_BOUNDS.py 13.6_13.8
+  536  less TEMPtreecorr_13.6_13.8.ini 
+  537  less TEMPtreecorr_13.6_13.8.ini 
+  538  python create_treecorr_BOUNDS.py 13.6_13.8
+  539  less TEMPtreecorr_13.6_13.8.ini 
+  540  python create_treecorr_BOUNDS.py 13.6_13.8
+  541  less TEMPtreecorr_13.6_13.8.ini 
+  542  less TEMPtreecorr_13.6_13.8.ini 
+  543  less treecorr_13.6_13.8.ini 
+  544  scp create_treecorr_BOUNDS.py tmcclintock@calvin.physics.arizona.edu:~/
+  545  scp run_all tmcclintock@calvin.physics.arizona.edu:~/
+  546  ls
+  547  mv sigma_r_treecorr.png Desktop/
+  548  python
+  549  cd Desktop/Programs/
+  550  ls
+  551  cd ..
+  552  ls
+  553  cd PythonTests/
+  554  ls
+  555  cd SimpleShared/
+  556  ls
+  557  less Makefile
+  558  cd
+  559  ssh -X tmcclintock@calvin.physics.arizona.edu
+  560  ssh -X tmcclintock@calvin.physics.arizona.edu
+  561  ssh -X tmcclintock@calvin.physics.arizona.edu
+  562  python
+  563  python
+  564  ls
+  565  cd Desktop/
+  566  ls
+  567  rm bashtest.sh~ 
+  568  cd bash_tests/
+  569  ls
+  570  emacs bashtest.sh &
+  571  touch argv_test.py
+  572  emacs argv_test.py &
+  573  touch argv_bash
+  574  emacs argv_bash &
+  575  bash argv_bash
+  576  bash argv_bash
+  577  bash argv_bash
+  578  python
+  579  cd Desktop/FrisbeeSim/
+  580  ls
+  581  cd 3DSim/
+  582  ls
+  583  cd Version4/
+  584  ls
+  585  cd ../Version6/
+  586  ls
+  587  emacs Animation.py &
+  588  cd Desktop/Statistics/
+  589  ls
+  590  mkdir erikas_stuff
+  591  cd erikas_stuff/
+  592  mkdir aug_11
+  593  cd aug_11/
+  594  mv ../../../Statistics_Exercises_section7.ipynb .
+  595  ipython notebook
+  596  ssh library@calvin.physics.arizona.edu
+  597  ssh -X tmcclintock@calvin.physics.arizona.edu
+  598  cd Desktop/
+  599  tar cvzf plots.tgz *.png
+  600  cd Desktop/Github_stuff/
+  601  ls
+  602  mkdir BBN_on_github
+  603  cd BBN_on_github/
+  604  cp ../../BBN/LCDM/NewVersion .
+  605  ls
+  606  cp -r ../../BBN/LCDM/NewVersion .
+  607  ls
+  608  cd Desktop/
+  609  ls
+  610  cd BBN
+  611  ls
+  612  cd LCDM/
+  613  ls
+  614  cd vLCDM
+  615  ls
+  616  make
+  617  ls
+  618  ./lnetwork 
+  619  make clean
+  620  ls
+  621  cd ..
+  622  ls
+  623  cd vLCDM2/
+  624  ls
+  625  make
+  626  ls
+  627  ./lnetwork 
+  628  ls
+  629  make clean
+  630  ls
+  631  cd ..
+  632  ls
+  633  ls -ltrh
+  634  cd NewVersion/
+  635  ls
+  636  make
+  637  ls
+  638  ./NewBBN 
+  639  make clean
+  640  ls
+  641  ls
+  642  cd
+  643  cd Desktop/Github_stuff/
+  644  ls
+  645  cd BBN_on_github/
+  646  ls
+  647  echo "# BBN" >> README.md
+  648  git init
+  649  git add README.md 
+  650  git commit -m "first commit, setting up folder"
+  651  git remote add origin https://github.com/tmcclintock/BBN.git
+  652  git push -u origin master
+  653  ls
+  654  git status
+  655  git add -a
+  656  git add -A
+  657  git commit "adding previous code"
+  658  git commit -m "adding previous code"
+  659  git push
+  660  ls
+  661  mv NewVersion/ Old_LCDM_Version
+  662  git add -A
+  663  git commit -m "changed name of folder for old code"
+  664  git push
+  665  ls
+  666  cd Desktop/
+  667  touch contour.py
+  668  emacs contour.py &
+  669  python contour.py
+  670  python contour.py
+  671  python contour.py
+  672  python contour.py
+  673  rm contour.py
+  674  python
+  675  ssh -X tmcclintock@calvin.physics.arizona.edu
+  676  ssh -X tmcclintock@calvin.physics.arizona.edu
+  677  python
+  678  ssh -X tmcclintock@calvin.physics.arizona.edu
+  679  cd ..
+  680  cd Syllabus/
+  681  ls
+  682  emacs syllabus.tex &
+  683  pdflatex syllabus.tex
+  684  cd Desktop/Class_Notes/
+  685  ls
+  686  cd PHYS105_Fall_2015/
+  687  ls
+  688  cd Lecture1/
+  689  ls
+  690  emacs lecture1.tex &
+  691  pdflatex lecture1.tex
+  692  pdflatex lecture1.tex
+  693  pdflatex lecture1.tex
+  694  pdflatex lecture1.tex
+  695  touch he4.py
+  696  emacs he4.py &
+  697  python he4.py
+  698  python he4.py
+  699  python he4.py
+  700  python he4.py
+  701  emacs lecture1.tex &
+  702  pdflatex lecture1.tex
+  703  cp he4.py all_elements.py
+  704  emacs all_elements.py &
+  705  python all_elements.py
+  706  python all_elements.py
+  707  python all_elements.py
+  708  python all_elements.py
+  709  python all_elements.py
+  710  python all_elements.py
+  711  ssh tmcclintock@faraday.physics.arizona.edu
+  712  emacs bashtest.sh 
+  713  bash bashtest.sh
+  714  emacs bashtest.sh &
+  715  bash bashtest.sh
+  716  cd
+  717  ssh tmcclintock@calvin.physics.arizona.edu
+  718  cd Desktop/
+  719  mkdir treecorr
+  720  cd treecorr/
+  721  unzip TreeCorr-releases-3.1.zip 
+  722  ls
+  723  python
+  724  ls
+  725  cd TreeCorr-releases-3.1
+  726  ls
+  727  python setup.py install --prefix=/home/tmcclintock/Desktop/treecorr
+  728  cd ..
+  729  ls
+  730  rm -r TreeCorr-releases-3.1
+  731  ls
+  732  cd lib/
+  733  ls
+  734  cd python2.7/
+  735  ls
+  736  cd site-packages/
+  737  ls
+  738  cd ..
+  739  cd ..
+  740  cd python2.7/
+  741  ls
+  742  mkdir site-packages/
+  743  rmdir site-packages/
+  744  ls
+  745  cd ..
+  746  rmdir python2.7/
+  747  ls
+  748  cd ..
+  749  rmdir lib/
+  750  ls
+  751  rm TreeCorr-releases-3.1.zip 
+  752  ls
+  753  python
+  754  ls ~
+  755  ls
+  756  ls
+  757  unzip TreeCorr-releases-3.1.zip 
+  758  ls
+  759  cd TreeCorr-releases-3.1
+  760  ls
+  761  python setup.py install --prefix=/home/tmcclintock
+  762  which python
+  763  cd ~
+  764  ls
+  765  mkdir pythonmodules
+  766  cd Desktop/treecorr/
+  767  python setup.py install --prefix=/home/tmcclintock/pythonmodules/
+  768  cd TreeCorr-releases-3.1
+  769  python setup.py install --prefix=/home/tmcclintock/pythonmodules/
+  770  python setup.py install --prefix=/home/tmcclintock/pythonmodules
+  771  cdl
+  772  cdl
+  773  cd
+  774  ls
+  775  cd pythonmodules/
+  776  ls
+  777  cd lib/
+  778  ls
+  779  cd python2.7/
+  780  ls
+  781  rmdir site-packages/
+  782  cd ..
+  783  ls
+  784  rmdir python2.7/
+  785  cd ..
+  786  rmdir lib/
+  787  ls
+  788  cd ..
+  789  rmdir pythonmodules/
+  790  ls
+  791  cd Desktop/
+  792  cd treecorr/
+  793  ls
+  794  rm -r TreeCorr-releases-3.1
+  795  ls
+  796  rm TreeCorr-releases-3.1.zip 
+  797  ls
+  798  cd ..
+  799  rmdir treecorr/
+  800  ls
+  801  which python
+  802  cd
+  803  cd anaconda/
+  804  ls
+  805  cd ..
+  806  pip install Treecorr --install-option="--prefix=~"
+  807  pip install --upgrade pip
+  808  python
+  809  python
+  810  cd anaconda/
+  811  ls
+  812  cd pkgs/
+  813  ls
+  814  pip install Treecorr --install-option="--prefix=~"
+  815  python
+  816  python
+  817  which treecorr
+  818  pip install Treecorr
+  819  python
+  820  which treecorr
+  821  ls
+  822  cd
+  823  ls
+  824  cd anaconda/
+  825  ls
+  826  cd pkgs/
+  827  ls
+  828  cd ..
+  829  ks
+  830  ls
+  831  cd imports/
+  832  ls
+  833  cd ..
+  834  python
+  835  cd lib/python2.7/site-packages/treecorr/
+  836  ls
+  837  cd ..
+  838  ls
+  839  cd TreeCorr-3.1.1-py2.7.egg-info/
+  840  ls
+  841  emacs dependency_links.txt &
+  842  less SOURCES.txt 
+  843  less PKG-INFO 
+  844  cd
+  845  cd Desktop/treecorr/
+  846  ls
+  847  unzip TreeCorr-releases-3.1.zip 
+  848  ls
+  849  cd TreeCorr-releases-3.1
+  850  ls
+  851  cd src/
+  852  ls
+  853  cd ..
+  854  python setup.py install
+  855  ls
+  856  less README.rst 
+  857  python treecorr/
+  858  lpython
+  859  python
+  860  cd src/
+  861  ls
+  862  cd ..
+  863  cd include/
+  864  ls
+  865  emacs Bounds.h &
+  866  cd PHYS105_Fall_2015/
+  867  ls
+  868  cd Lecture2/
+  869  ls
+  870  emacs lecture2.tex &
+  871  pdflatex lecture2.tex
+  872  pdflatex lecture2.tex
+  873  pdflatex lecture2.tex
+  874  pdflatex lecture2.tex
+  875  cd Desktop/
+  876  scp Anaconda-2.3.0-Linux-x86_64.sh kirk@calvin.physics.arizona.edu
+  877  rm kirk\@calvin.physics.arizona.edu 
+  878  scp Anaconda-2.3.0-Linux-x86_64.sh kirk@calvin.physics.arizona.edu:~/
+  879  cd Desktop/
+  880  scp TreeCorr-releases-3.1\(1\).zip kirk@calvin.physics.arizona.edu:~/
+  881  ssh -X kirk@calvin.physics.arizona.edu
+  882  ssh -X kirk@calvin.physics.arizona.edu
+  883  cd Desktop/Class_Notes/PHYS105_Fall_2015/
+  884  ls
+  885  cd Lecture2/
+  886  ls
+  887  emacs lecture2.tex &
+  888  pdflatex lecture2.tex
+  889  cd ..
+  890  ls
+  891  cd Lecture5/
+  892  ls
+  893  emacs lecture5.tex &
+  894  emacs lecture5.tex &
+  895  cd ../Lecture2/
+  896  emacs lecture2.tex &
+  897  pdflatex lecture2.tex
+  898  cd ../Lecture3/
+  899  ls
+  900  emacs lecture3.tex &
+  901  pdflatex lecture3.tex
+  902  pdflatex lecture3.tex
+  903  pdflatex lecture3.tex
+  904  pdflatex lecture3.tex
+  905  pdflatex lecture3.tex
+  906  pdflatex lecture3.tex
+  907  cd ../Lecture4/
+  908  emacs lecture4.tex &
+  909  pdflatex lecture4.tex
+  910  pdflatex lecture4.tex
+  911  pdflatex lecture4.tex
+  912  cd ../Lecture5/
+  913  ls
+  914  cd ../Lecture4/
+  915  emacs lecture4.tex &
+  916  pdflatex lecture4.tex
+  917  cd ../Lecture5/
+  918  emacs lecture5.tex &
+  919  pdflatex lecture5.tex
+  920  pdflatex lecture5.tex
+  921  cd ../Lecture4/
+  922  pdflatex lecture4.tex
+  923  cd ..
+  924  ls
+  925  cd Lecture6/
+  926  ls
+  927  ssh -X kirk@calvin.physics.arizona.edu
+  928  ssh -X kirk@calvin.physics.arizona.edu
+  929  cd Desktop/
+  930  cd Class_Notes/PHYS105_Fall_2015/
+  931  ls
+  932  cd Lecture6/
+  933  emacs lecture6.tex &
+  934  ls
+  935  pdflatex lecture6.tex
+  936  emacs ../Lecture5/lecture5.tex &
+  937  pdflatex lecture6.tex
+  938  touch variableops.c
+  939  ls ../Lecture2/
+  940  ls ../Lecture3/
+  941  ls ../Lecture4/
+  942  ls ../Lecture5/
+  943  emacs variableops.c &
+  944  emacs hello.c &
+  945  gcc variableops.c
+  946  ./a.out 
+  947  emacs lecture6.tex&
+  948  emacs ../Lecture5/lecture5.tex &
+  949  pdflatex lecture6.tex
+  950  pdflatex lecture6.tex
+  951  pdflatex lecture6.tex
+  952  touch whileloop.c
+  953  emacs whileloop.c &
+  954  emacs hello.c &
+  955  gcc whileloop.c
+  956  ./a.out 
+  957  gcc whileloop.c
+  958  ./a.out 
+  959  gcc whileloop.c
+  960  gcc whileloop.c
+  961  ./a.out 
+  962  gcc whileloop.c
+  963  ./a.out 
+  964  ./a.out 
+  965  gcc whileloop.c
+  966  ./a.out 
+  967  pdflatex lecture6.tex
+  968  pdflatex lecture6.tex
+  969  pdflatex lecture6.tex
+  970  pdflatex lecture6.tex
+  971  pdflatex lecture6.tex
+  972  pdflatex lecture6.tex
+  973  pdflatex lecture6.tex
+  974  pdflatex lecture6.tex
+  975  pdflatex lecture6.tex
+  976  touch rectanglerule.c
+  977  mv rectanglerule.c rectangle_integration.c
+  978  emacs rectangle_integration.c &
+  979  gcc rectangle_integration.c
+  980  ./a.out 
+  981  gcc rectangle_integration.c
+  982  ./a.out 
+  983  gcc rectangle_integration.c
+  984  ./a.out 
+  985  gcc rectangle_integration.c
+  986  ./a.out 
+  987  pdflatex lecture6.tex
+  988  pdflatex lecture6.tex
+  989  pdflatex lecture6.tex
+  990  pdflatex lecture6.tex
+  991  mv rectangle_integration.c rectangle_method.c
+  992  emacs rectangle_method.c 
+  993  rm rectangle_integration.c~ 
+  994  emacs rectangle_method.c &
+  995  pdflatex lecture6.tex
+  996  pdflatex lecture6.tex
+  997  pdflatex lecture6.tex
+  998  ssh -X tmcclintock@calvin.physics.arizona.edu
+  999  ssh -X tmcclintock@calvin.physics.arizona.edu
+ 1000  pdflatex lecture2.tex
+ 1001  less history
+ 1002  history > less

@@ -1,0 +1,55 @@
+Lecture 1
+- logging in
+- changing password with passwd
+- introduce myself and Alex
+- syllabus
+- "you are using a terminal, connecting this machine to a different one"
+- open a program in emacs
+- hello world program
+-- C programming language runs linearly from top to bottom
+-- the program starts from the word main and goes down from there
+-- this is one line, and it prints "Hello world!" using the printf funciton
+-- functions are tools at your disposal, and you will learn dozens of them,
+as well as how to create your own. printf is probably the most often used
+function, and you will use it over and over again
+- The C Programming Language by Kernighan and Ritchie (FREE ONLINE)
+- assign homework 1/in class assignment 1
+
+Homework 1
+- take hello world and add comments to it
+- needed comments include: name, class section, short description of program, 
+directions on how to compile and run
+- must be submitted on d2l
+
+Lecture 2
+- last time: terminal basics (logging in, emacs), hello.c
+- show how to see graded homework 1 and feedback
+- more terminal commands: history, ls (list), mkdir, cd
+- discuss the use of variables, as well as declarations, initializations,
+and assignments, as well as some math on them
+- state that variable names can be WHATEVER YOU WANT!!
+- show how to print variables, and show how to read ERROR MESSAGES
+- variables.c
+-- declare float x, y
+-- declare and initialize (sameline) float a=1.5, b=2
+-- declare int i
+-- assign i = 1
+-- declare and initialize j = 2
+-- assign x = 3.1415
+-- assign y = a*x + b
+-- printf( Integer i and integer j\n)
+-- printf("%f = ", y)
+-- printf("%f * %f + %f \n",a,x,b)
+-- put in an error by assigning z = 0.1 without declaring it
+- discuss I/O, and demonstrate how to store input into a variable
+- inout.c
+-- declare num1, num2
+-- scanf for num1 and num2
+-- printf num1, num2, and num1*num2
+- in class assignment 2: temperature convert
+-- write a program that takes in from the user (input, using scanf) a
+temperature in F. Store this number in a variable (perhaps called Ftemp, or
+fahr, or something like that)
+-- calculate what this temperature is in celsius C = 0.556 * F - 17.78
+-- print out the message "Temperature FFF degrees Fahrenheit is 
+CCC degrees Celsius"

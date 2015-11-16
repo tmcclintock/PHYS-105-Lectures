@@ -1,0 +1,197 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{\usetheme{boxes}}
+
+\usepackage{array}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{relsize}
+\usepackage{ragged2e}
+\usepackage[T1]{fontenc}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{red},
+}
+\lstdefinestyle{custombash}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=bash,
+  basicstyle=\footnotesize\ttfamily,
+  showstringspaces=false,
+  commentstyle=\itshape\color{purple!40!black},
+  keywordstyle=\itshape\color{green!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\usebackgroundtemplate
+{
+  \hbox to \paperwidth{\hfil\includegraphics[width=4in,
+      height=\paperheight]{wildcat_transparent.jpg}\hfil}
+}
+
+\title{PHYS 105 Lecture 8: Graphics, Random Numbers and Random Walk}
+\author{Tom McClintock \\
+	Dept. of Physics\\
+	University of Arizona
+}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Last time}
+  \begin{itemize}
+    \item Functions
+    \item Pointers
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{This time}
+  \begin{itemize}
+    \item Graphics
+    \item Random numbers
+    \item Random walk
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{PhilsPlot}
+  The graphics package we will use is called PhilsPlot. It is designed by
+  Professor Phil Pinto from the astronomy department.\\
+  This class you will learn how to draw straight lines, and use this
+  to plot a ``random walk'', which emulates a basic but important physical
+  process.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Including PhilsPlot}
+  In all graphical programs you need to include the Philsplot library:
+  \begin{lstlisting}[style=customc]
+    #include ``philsplot.h''
+  \end{lstlisting}
+  In addition, we will use a \textbf{new compiler}. Instead of using 
+  ``gcc'' from now on use ``pc'':
+  \begin{lstlisting}[style=custombash]
+    pc myprogram.c -o myprogram.exe
+  \end{lstlisting}
+  This stands for ``Philsplot compiler''.
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]
+  \frametitle{drawing.c}
+  This program draws a line across the screen.
+  \lstinputlisting[style=customc]{drawing.c}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Random numbers}
+  Generating random numbers is an \textbf{essential} tool to
+  science. We use random numbers to do statistics on data,
+  perform difficult integrals, and do simulations.\\
+  Today you will simulate a ``random walk''.\\
+  Random numbers are generated from a random number generator (RNG).
+  The RNG we will use is found in the \textit{stdlib.h} library.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Random number basics}
+  To call an RNG and get a random number, you use:
+  \begin{lstlisting}[style=customc]
+    int i;
+    i = rand();
+  \end{lstlisting}
+  The function \textbf{rand()} returns a random number between 0 and
+  the maximum allowed integer.\\
+  To get a random number between, say 0 and 9, you use \textit{modulo}:
+  \begin{lstlisting}[style=customc]
+    int i;
+    i = rand()%10;
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]
+  \frametitle{randomnumbers.c}
+  \lstinputlisting[style=customc]{randomnumbers.c}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Random walks}
+  In physics, when particles move around in the ``real world''
+  they are always taking a random walk. There are no billiard ball
+  collisions at the microscopic level.\\
+  A random walk simulator attempts to mimic this behavior.\\
+  \vspace{12pt}
+  We will start by considering the most basic random walk: 
+  a particle takes $N$ steps, and each time can either step $+1$
+  or step $-1$ (i.e. left or right).
+\end{frame}
+
+\begin{frame}
+  \frametitle{Random walk algorithm}
+  For the random walk our 
+  approach will be the following:
+  \begin{enumerate}
+  \item Create a plot where the x-axis goes from 0 to the number of steps $N$ 
+    and represents the number of steps taken so far $n$,
+    and the y-axis goes from $\pm N$ and represents the 
+    position of the particle $p$.
+  \item Draw a random number $R$ that is either $-1$ or $+1$.
+  \item If $R==-1$ step left $(p=p-1)$, otherwise step right $(p=p+1)$.
+  \item Use drawto\_plot() to draw to the new location $(n,p)$
+  \item Repeat this for $N$ steps.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]
+  \frametitle{randomwalk.c}
+  Let's take ten steps, so $N=10$.
+  \lstinputlisting[style=customc]{randomwalk.c}
+\end{frame}
+
+\begin{frame}
+  \frametitle{In class assignment}
+  Today there are two assignments:
+  \begin{enumerate}
+  \item In \textbf{drawing.c} you drew two sides of a triangle. Complete the
+    third side.
+  \item Try modifying the random walk code to print out the current step
+    number and position at each iteration. Also, alter the program so that
+    the line changes color at each step.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Next time}
+  \begin{itemize}
+    \item File I/O
+    \item Histograms
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{No HW this week}
+  There is no homework assignment this class.
+\end{frame}
+
+\end{document}

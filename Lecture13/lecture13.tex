@@ -1,0 +1,217 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{\usetheme{boxes}}
+
+\usepackage{array}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{relsize}
+\usepackage{ragged2e}
+\usepackage[T1]{fontenc}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{red},
+}
+\lstdefinestyle{custombash}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=bash,
+  basicstyle=\footnotesize\ttfamily,
+  showstringspaces=false,
+  commentstyle=\itshape\color{purple!40!black},
+  keywordstyle=\itshape\color{green!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\usebackgroundtemplate{
+  \hbox to \paperwidth{\hfil\includegraphics[width=4in,
+      height=\paperheight]{wildcat_transparent.jpg}\hfil}
+}
+
+\title{PHYS 105 Lecture 13: Orbital Motion}
+\author{Tom McClintock \\
+	Dept. of Physics\\
+	University of Arizona
+}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Last time}
+  \begin{itemize}
+    \item Projectile Motion
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{This time}
+  \begin{itemize}
+    \item Orbital Motion
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Orbital Motion}
+  Many systems exhibit harmonic motion. Orbital systems
+  are one such example, and here we will make a crude
+  approximaton of the Earth around the Sun.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Freedom of Units}
+  Since we are the ones writing these programs we have
+  full control over what units to use. We could use meters,
+  kilometers, or some other distance scale. Similarly, we could
+  use grams, kilograms, or some other mass unit (or even
+  imperial units... barf!). This is because the lengths
+  in philsplot don't actually correspond to any physical length.\\
+  For this reason, we will choose a special set of units in which
+  $GM_{sun}=1$. This is called using \textit{normalizing} your variables.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Equations of Motion}
+  Here are our equations of motion now:
+  \begin{eqnarray*}
+    F_x = -\frac{m}{r^2}\frac{x}{r} && F_y = -\frac{m}{r^2}\frac{y}{r}\\
+    \vec{a} &=& \frac{\vec{F}}{m}\\
+    \Delta\vec{v} &=& \vec{a}\Delta t\\
+    \Delta\vec{r} &=& \vec{v}\Delta t\\
+    \vec{r}(t+\Delta t) &=& \vec{r}(t) + \Delta\vec{r}\\
+    \vec{v}(t+\Delta t) &=& \vec{v}(t) + \Delta\vec{v}
+  \end{eqnarray*}
+  Notice the similarities with how everything is written compared to the
+  projectile motion! With this formulation, as long as you can write
+  down the forces, then everything else is identical!!!
+\end{frame}
+
+\begin{frame}
+  \frametitle{Initial conditions}
+  The uniqueness of a system such as this is completely set by the
+  initial conditions. For this, let's use:
+  \begin{eqnarray*}
+    x = 1 && y = 0\\
+    v_x = 0 && v_y = 1\\
+    m = 1
+  \end{eqnarray*}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]
+  \frametitle{orbital.c}
+  \lstinputlisting[style=customc]{orbital.c}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+  \frametitle{Projects}
+  Projects are due by \textbf{December 9}, the last day of classes. 
+  This is a list of suggested topics, 
+  however if you have an idea for a project then feel free to pursue that.
+  I ask that if you pick your own project that you meet with me so
+  we can discuss if it.
+  \begin{itemize}
+  \item Graphically simulate two billiard balls colliding on a pool table.
+    You should include the interactions with the walls and the 
+    effect of friction.
+  \item Make an animation of a multibody system, e.g. three or more gravitating
+    planets.
+  \item Direct a photon into a lens and have it refract at each surface. This
+    would serve as a demonstration (or simulation) of the bending of light in
+    an optical system. Or choose to direct the photon onto one or more curved
+    mirrors.
+  \item Direct a photon of a fixed wavelength onto a prism and have it refract 
+    at each surface by an amount which depends on its wavelength in a 
+    reasonable way.
+  \item Direct a non-relativistic charged particle towards a fixed charged 
+    particle and plot the path.
+  \item Create Lissajous figures for one or more chaotic systems.
+  \item Simulate a double pendulum, or a double spring system.
+  \item Plot the height versus time of a rocket blasting off from the
+    surface of the Earth. A major fraction of the initial mass of the
+    rocket is its fuel. It runs out of fuel a short time after blastoff.
+  \item Implement a Monte-Carlo program (i.e. using random numbers) to
+    calculate $\pi$ to some high degree of accuracy.
+  \item Compare trajectories of projectile motion including different
+    kinds of friction, e.g. linear ($-a\vec{v}$) or quadratic ($-bv^2\hat{v}$).
+  \item Implement a higher order integration routine, such as $4^{th}$ order 
+    Runge-Kutta.
+  \item Write a program that finds the most accurate step size for
+    the trapezoid integration method for the integral 
+    $\int_0^{20}xe^{-x}dx$. 
+    This is called the Poisson distribution.
+  \item Write a program that does linear regression.
+  \item Write a program that uses a recursive function that does something,
+    such as finds the $N^{th}$ number in the Fibonacci sequence or calculates
+    a factorial ($N!$).
+  \item Implement a sorting algorithm that sorts an array of random
+    integers.
+  \item Implement a data structure such as a linked list or tree, and 
+    demonstrate an advantage over an array.
+  \item Develop a program to draw a maze as well as its solution. Keep this
+    simple, but be able to demonstrate how it finds the solution.
+  \item Find the most cost effective way for a person to travel to a number
+    of cities (8 or more), given that the person wants to visit each city
+    only once and, at the end, return to the city of origin. You should
+    specify how you define ``cost effective'', e.g. shortest total distance
+    traveled.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{In class assignment}
+  \begin{enumerate}
+    \item Try messing with the initial conditions such as the position and
+      initial velocity.
+    \item A good check on how realistic a simulation does 
+      is by checking conserved
+      quantities. Have your program print out the potential and kinetic energy
+      every ten steps. Are these quantities conserved?
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Next time}
+  \begin{itemize}
+  \item Large Programs
+  \item Basic makefiles
+  \end{itemize}
+  Remember to choose a project soon!
+\end{frame}
+
+\begin{frame}
+  \frametitle{HW 7 - Harmonic Motion due in two weeks}
+  Simulate a ball hanging from the ceiling by a spring, 
+  and include air resistance.
+  The force for this would look like the following:
+  \begin{equation*}
+    \vec{F} = m\vec{g} - bv^2\hat{v} - k\vec{d}
+  \end{equation*}
+  where $\vec{F}$ always points in the $y$ direction. Here,
+  gravity points down, $\hat{v}$ points in the direction
+  of the velocity, and $\vec{d}$ is the displacement from
+  equilibrium of the spring (i.e. distance from the starting position).
+  Simulate this with initial conditions $y(0)=0$ and $v(0)=0$.
+  You can quickly write this homework by modifying your dropping ball program.
+\end{frame}
+
+\end{document}

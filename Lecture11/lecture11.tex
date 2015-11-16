@@ -1,0 +1,212 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{\usetheme{boxes}}
+
+\usepackage{array}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{relsize}
+\usepackage{ragged2e}
+\usepackage[T1]{fontenc}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{red},
+}
+\lstdefinestyle{custombash}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=bash,
+  basicstyle=\footnotesize\ttfamily,
+  showstringspaces=false,
+  commentstyle=\itshape\color{purple!40!black},
+  keywordstyle=\itshape\color{green!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\usebackgroundtemplate
+{
+  \hbox to \paperwidth{\hfil\includegraphics[width=4in,
+      height=\paperheight]{wildcat_transparent.jpg}\hfil}
+}
+
+\title{PHYS 105 Lecture 11: Simulating a Bouncing Ball}
+\author{Tom McClintock \\
+	Dept. of Physics\\
+	University of Arizona
+}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Last time}
+  \begin{itemize}
+    \item Gaussians
+    \item Dynamic Displays
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{This time}
+  \begin{itemize}
+    \item Simulating a Bouncing Ball
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Gravity}
+  From day one in physics you learned learned about the force of gravity:
+  \begin{equation*}
+    \vec{F} = m\vec{g}.
+  \end{equation*}
+  This class, we are going to investigate this force numerically. 
+  Specifically, we are going to simulate a ball released from rest some height
+  above a hard surface.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Disclaimer!}
+  Yes, this problem is trivially solved using energy, and
+  completely reduces to the kinematic equations, but the 
+  numerical methods here are general, and apply to problems with
+  any complicated force or initial configuration.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Equations of Motion I}
+  On the screen, we will plot the height of the ball, $y$,
+  and presume that in the $x$ direction it is always at $x=0$.\\
+  Since the ball is falling, the height is dependent on the time, $y(t)$.
+  Therefore, in a small chunk of time called a ``timestep'', $\Delta t$,
+  the height will change:
+  \begin{equation*}
+    \Delta y = v\Delta t.
+  \end{equation*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Equations of Motion II}
+  Similarly, since the force of gravity is pulling on the ball,
+  the velocity, $v$, is also changing:
+  \begin{equation*}
+    \Delta v = a\Delta t.
+  \end{equation*}
+  What is the acceleration $a$? It is given by the force
+  \begin{equation*}
+    a = \frac{F}{m}
+  \end{equation*}
+  where
+  \begin{equation*}
+    F = -mg
+  \end{equation*}
+  and the $-$ means the force points down, or in the $-y$ direction.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Equations of Motion III}
+  Together, these equations constitute the ``equations of motion'' of the
+  system, and demonstrate the steps that we need to take to find the height.
+  \begin{itemize}
+    \item Calculate $F$
+    \item Calculate $a = \frac{F}{m}$.
+    \item Calculate the change in velocity $\Delta v = a\Delta t$.
+    \item Calculate the change in position $\Delta y = v\Delta t$.
+    \item Update the velocity and positions:
+      \begin{itemize}
+      \item $y(t+\Delta t) = y(t) + \Delta y$
+      \item $v(t+\Delta t) = v(t) + \Delta v$
+      \end{itemize}
+    \item Repeat.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Equations}
+  Here are all of the equations, you will need:
+  \begin{eqnarray*}
+    &F = -mg  \\
+    &a = \frac{F}{m}\\
+    &\Delta v = a\Delta t  \\
+    &\Delta y = v\Delta t\\
+    &y(t+\Delta t) = y(t) + \Delta y \\
+    &v(t+\Delta t) = v(t) + \Delta v\\
+    &t = t + \Delta t
+  \end{eqnarray*}
+  For constants we will use $m = 1kg$, and for initial
+  conditions we will have $y(0) = 5 m$ and $v(0)=0m/s$.
+  Now we are ready to program this.
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]
+  \frametitle{bounce.c}
+  \lstinputlisting[style=customc]{bounce.c}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Wut?}
+  Ok, so the ball fell through the floor. Why was that?\\
+  It was because we never said what to do when the ball reached
+  the floor. This is an example of a \textbf{boundary condition} in
+  our simulation. In general, bounday conditions control what happens
+  at the extremum of your code, and are needed to make it work properly.
+  To fix our code, add the following lines at the end of the for loop
+  just after the delpoint\_plot():
+  \begin{lstlisting}[style=customc]
+    if(y < 0){
+      v = -v;
+    }
+  \end{lstlisting}
+  This will turn the ball around.
+\end{frame}
+
+\begin{frame}
+  \frametitle{In class assignment}
+  Analytically, dealing with friction is very difficult. 
+  Numerically this is no problem though.
+  When calculating the force, all you have to do is add on a 
+  new term that acts in the opposite direction
+  of the velocity. This looks like:
+  \begin{equation}
+    \vec{F}_f = -bv^2\hat{v}.
+  \end{equation}
+  Thus, if the velocity is down, the force points up, 
+  and if the velocity is up, it points down. Implement this
+  frictional force, and find a value for $b$ so that the ball 
+  bounces to only half of its original height on its first bounce.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Next time}
+  \begin{itemize}
+  \item Projectile Motion
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{HW 6 - photon off of a mirror due in one week}
+  Create a program that bounces a photon (dot) off of a mirror. Have
+  the photon come in from the top left corner, hit the mirror in the center,
+  and leave through the top right corner.
+\end{frame}
+
+\end{document}

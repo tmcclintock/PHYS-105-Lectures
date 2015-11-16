@@ -1,0 +1,257 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{\usetheme{boxes}}
+
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{relsize}
+\usepackage[T1]{fontenc}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{red},
+}
+\lstdefinestyle{custombash}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=bash,
+  basicstyle=\footnotesize\ttfamily,
+  showstringspaces=false,
+  commentstyle=\itshape\color{purple!40!black},
+  keywordstyle=\itshape\color{green!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\usebackgroundtemplate
+{
+  \hbox to \paperwidth{\hfil\includegraphics[opacity=0.3,width=4in,
+      height=\paperheight]{wildcat_transparent.jpg}\hfil}
+}
+
+\title{PHYS 105: Introduction to Computational Physics Lecture 1}
+\author{Tom McClintock \\
+	Dept. of Physics\\
+	University of Arizona
+}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Logging on to the machine}
+  Log onto the windows machine in front of you using your D2L login name 
+  and password.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Logging on to faraday}
+  Log into the school server by double-clicking on the SSH Secure Shell Client
+  %Insert the picture here
+  \begin{itemize}
+  \item Server name: faraday
+  \item Account name: your D2L login name
+  \item Password: uap\_6214275
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Welcome to PHYS105!}
+  Credit: One Unit\\
+  Room: PAS 272\\
+  Co-requisites: PHYS141 or PHYS161.\\
+  Lectures: Tuesday 2-4 pm {\it or} Wednesday 2-4 pm.\\
+  \vspace{12pt}
+  Instructor: Tom McClintock\\
+  Office: PAS 439\\
+  Office Hours: Mondays 11-12 and Thursdays 9-11\\
+  Email: \href{mailto:tmcclintock@email.arizona.edu}{\nolinkurl{tmcclintock@email.arizona.edu}}\\
+  \vspace{12pt}
+  TA: Alex Thompson\\
+  Email: \href{mailto:alejandrot@email.arizona.edu}{\nolinkurl{alejandrot@email.arizona.edu}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Syllabus}
+  In this class you will:
+  \begin{itemize}
+  \item Learn the C programming language
+  \item Use the Linux operating system
+  \item Apply programming to physics problems
+  \item Learn basic graphical techniques
+  \item Learn how to simulate physical systems
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Syllabus}
+  \textbf{Homeworks:} Approximately eight assignments throughout the semester. 
+  All parts of the homework including source files and accompanying files 
+  (such as output) must be submitted through D2L. 
+  All files must be titled using the following format:
+  lastname\_assignment.extension. Example: McClintock\_HW1.txt or 
+  Thompson\_Final\_Project.c.\\
+  \vspace{12pt}
+  \textbf{Project:} Each student will complete a final project that 
+  is due during the last week of class. More details will be discussed 
+  at a later date.\\
+  \vspace{12pt}
+  \textbf{Final Exam:} There is no final exam for this course.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Syllabus}
+  \textbf{Late Work:} Homeworks and projects handed in beyond the due-date
+  will be accepted only if arrangementes have been made in advance. If
+  you feel a grade for a homework or project was determined incorrectly
+  you must submit a re-grade request within one week of the time the
+  assignment was returned to the class.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Syllabus}
+  \textbf{Grading:} Grades will be based on the homeworks and the 
+  final project. Homeworks will count for 75\% of the final grade
+  and the project will count for 25\%.\\
+  Letter grades will be determined from numerical grades as follows:\\
+  \indent 90-100 A, 80-89 B, 70-79 C, 60-69 D, <60 E.\\
+  \vspace{12pt}
+  \textbf{Incompletes:} Will be given if a student has 
+  \underline{satisfactorily} completed the majority of the work in the class 
+  and has a valid reason, such as  medical, for not completing the 
+  remainder of the course. Students must make arrangements with the 
+  instructor in order to receive an incomplete.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Syllabus}
+  \textbf{Absence Policy:} All holidays or special events observed 
+  by organized religions will be honored for those students who show
+  affiliation with that particular religion.\\
+  Absences pro-approved by the UA Dean of Students will be honored.\\
+  \vspace{12pt}
+  \textbf{Classroom Behavior:} Students are expected to maintain a good 
+  level of decorum in the classroom. Please turn off all pagers (lol)
+  and cell phones during class.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Syllabus}
+  \textbf{General:} Students with disabilities who require reasonable 
+  accomodations to fully participate in course activities or meet
+  course requirements are encouraged to register with the Disability
+  Resource Center and to contact the instructor to discuss access issues.\\
+  \vspace{12pt}
+  Students are expected to follow the University code of academic integrity
+  and the code of student conduct. Those codes can be found at\\
+  \href{http://deanofstudents.arizona.edu/policiesandcodes}{\nolinkurl{deanofstudents.arizona.edu/policiesandcodes}}\\
+  \vspace{12pt}
+  Other than grade and absence policies, the information in this syllabus
+  may be subject to change with reasonable advance notice.\\
+  \vspace{12pt}
+  A copy of this syllabus can be found in its own document on the D2L website.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Opening programs}
+  C programs (as well as programs in any other language) are written in 
+  text editors. You can use any editor you like, but I encourage you to use
+  emacs.\\
+  In your terminal, write:
+  \begin{lstlisting}[style=custombash]
+    emacs hello.c
+  \end{lstlisting}
+  And hit enter.\\
+  A new window will open, which will allow you to type up a program. An annoying text box
+  will be in the bottom. There is a bit of text you can click on to make it go away.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Your first program}
+  \lstinputlisting[style=customc]{hello.c}
+  %\vspace{12pt}
+  Lines with a // are called \textbf{comments}. 
+  They are \textbf{necessary}.\\
+  You can write whatever you want in a comment. They are used to explain
+  what is going on to someone reading your code.\\
+  You will be graded on how well you comment your code.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Your first program}
+  \lstinputlisting[style=customc]{hello.c}
+  All programs in the C language begin at the line ``main()'' and proceed
+  downward from there.\\
+  In this program, the words ``Hello World!'' are printed to the screen.\\
+  \textbf{Note:} Any line inside of a set of \{\} must end in a semicolon (;).
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Running your first program}
+  Save your program by hitting control-x, or clicking the floppy disk at the top,
+  or use your mouse to go to file$\rightarrow$save current buffer.\\
+  In the terminal, type these two lines.
+  \begin{lstlisting}[style=custombash]
+    gcc hello.c -o hello.exe
+  \end{lstlisting}
+  and then
+  \begin{lstlisting}[style=custombash]
+    hello.exe
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Running your first program}
+  What happened here?
+  \begin{lstlisting}[style=custombash]
+    gcc hello.c -o hello.exe
+  \end{lstlisting}
+  \begin{lstlisting}[style=custombash]
+    hello.exe
+  \end{lstlisting}
+  The first line \textbf{compiles} your code. It turns the C program into something
+  the computer can read (the language of computers; ones and zeros).\\
+  The second line ran the \textbf{executable} file.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Homework 1}
+  Due before the start of the next class.\\
+  Change the message printed to the screen to something else.\\
+  Submit your hello.c program to D2L.\\
+  In order to submit to D2L, you must open firefox \textbf{from the terminal}.
+  This can be done by simply typing
+  \begin{lstlisting}[style=custombash]
+    firefox
+  \end{lstlisting}
+  and hitting enter. From there navigate to d2l.arizona.edu and submit on the
+  class webpage.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Next time}
+  \begin{itemize}
+    \item More terminal commands
+    \item Variables and basic math
+    \item I/O from the user
+  \end{itemize}
+\end{frame}
+\end{document}

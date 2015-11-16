@@ -1,0 +1,140 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{\usetheme{boxes}}
+
+\usepackage{array}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{relsize}
+\usepackage{ragged2e}
+\usepackage[T1]{fontenc}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{red},
+}
+\lstdefinestyle{custombash}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=bash,
+  basicstyle=\footnotesize\ttfamily,
+  showstringspaces=false,
+  commentstyle=\itshape\color{purple!40!black},
+  keywordstyle=\itshape\color{green!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\usebackgroundtemplate{
+  \hbox to \paperwidth{\hfil\includegraphics[width=4in,
+      height=\paperheight]{wildcat_transparent.jpg}\hfil}
+}
+
+\title{PHYS 105 Lecture 12: Projectile Motion}
+\author{Tom McClintock \\
+	Dept. of Physics\\
+	University of Arizona
+}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Last time}
+  \begin{itemize}
+    \item Simulating a Bouncing Ball
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{This time}
+  \begin{itemize}
+    \item Projectile Motion
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{2D Projectile Motion}
+  Projectile motion was a staple for your introductory mechanics class.
+  Hopefully you recall that it is actually pretty simple to go from
+  one dimension to two. Just write all of your kinetic equations
+  twice: once for the $x$ direction and once for the $y$ direction.\\
+  The same is true for our simulation.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Equations of Motion}
+  Here are our equations of motion now:
+  \begin{eqnarray*}
+    F_x = 0 && F_y = -mg\\
+    \vec{a} &=& \frac{\vec{F}}{m}\\
+    \Delta\vec{v} &=& \vec{a}\Delta t\\
+    \Delta\vec{r} &=& \vec{v}\Delta t\\
+    \vec{r}(t+\Delta t) &=& \vec{r}(t) + \Delta\vec{r}\\
+    \vec{v}(t+\Delta t) &=& \vec{v}(t) + \Delta\vec{v}
+  \end{eqnarray*}
+  The vector equations just mean that you write it twice: once for
+  the $x$ direction and once for the $y$ direction.
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]
+  \frametitle{projectile.c}
+  \lstinputlisting[style=customc]{projectile.c}
+\end{frame}
+
+\begin{frame}
+  \frametitle{In class assignment}
+  Now, including drag in our calculation is a little trickier, since it
+  can in general have a component in the $x$ or $y$ direction. These will
+  look like the following:
+  \begin{eqnarray*}
+    &f_x = -bv^2\hat{v}\cdot\hat{x} = -bv^2\left(\frac{v_X}{v}\right)\\
+    &f_y = -bv^2\hat{v}\cdot\hat{y} = -bv^2\left(\frac{v_y}{v}\right)
+  \end{eqnarray*}
+  Implement these equations by including them in the forces.\\
+  Also, make your projectile bounce when it hits the ground (so, reverse $v_y$
+  when $y<0$).
+\end{frame}
+
+\begin{frame}
+  \frametitle{Next time}
+  \begin{itemize}
+  \item Orbital Motion
+  \item Final Projects
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Last HW - Harmonic Motion due in three weeks}
+  Simulate a ball hanging from the ceiling by a spring, 
+  and include air resistance.
+  The force for this would look like the following:
+  \begin{equation*}
+    F_y = -mg - bv^2\frac{v_y}{v} - ky
+  \end{equation*}
+  where $\vec{F}$ always points in the $y$ direction. Here,
+  $y$ is the displacement from the origin.
+  Simulate this with initial conditions $y(0)=+1.0$ and $v(0)=-1.0$, 
+  with constants of $b=0.1$ and $k = 20.0$.
+  You can quickly write this homework by modifying your dropping ball program.
+\end{frame}
+
+\end{document}
