@@ -1,0 +1,170 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{\usetheme{boxes}}
+
+\usepackage{array}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{relsize}
+\usepackage{ragged2e}
+\usepackage[T1]{fontenc}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{red},
+}
+\lstdefinestyle{custombash}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=bash,
+  basicstyle=\footnotesize\ttfamily,
+  showstringspaces=false,
+  commentstyle=\itshape\color{purple!40!black},
+  keywordstyle=\itshape\color{green!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\usebackgroundtemplate{
+  \hbox to \paperwidth{\hfil\includegraphics[width=4in,
+      height=\paperheight]{wildcat_transparent.jpg}\hfil}
+}
+
+\title{PHYS 105 Lecture 14: Large Programs and Makefiles}
+\author{Tom McClintock \\
+	Dept. of Physics\\
+	University of Arizona
+}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Last time}
+  \begin{itemize}
+    \item Orbital Motion
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{This time}
+  \begin{itemize}
+    \item Large Programs
+    \item Makefiles
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Large Programs}
+  As you may have noticed, our programs are growing ever larger.
+  This becomes a problem if you want an individual file to be readable.
+  In general, it is good coding philosophy to break a large file into
+  smaller pieces that all do a self-contained operation. This is the
+  philosophy we will take in breaking apart some of our larger programs.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Breaking apart gaussian.c}
+  Today, we will break apart the gaussian.c program that we wrote
+  way back when. Feel free to copy/paste into a new file, but I will
+  be writing the code from scratch.\\
+  Our strategy will be to put the gaussian function, previously written
+  just below the main(), into its own file.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Header files}
+  The way you link c-files together is through ``header'' files. These
+  files contain the prototypes of the functions found in an identically
+  named c-file. For this program, we will create a header 
+  called ``function.h'' for the c-file called ``function.c''.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{function.h}
+  This file, called ``function.h'' contains the prototype and library links
+  used in the code with the same name but a ``.c'' suffix.
+  \lstinputlisting[style=customc]{function.h}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{function.c}
+  The function itself is in a c-file.
+  \lstinputlisting[style=customc]{function.c}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{gauss\_main.c}
+  The entire main is in its own file.
+  \lstinputlisting[style=customc]{gauss_main.c}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Superglue: the Makefile}
+  As you may have noticed, the compilation instructions are different.
+  For programs with many c-files and headers, it is a pain to compile
+  at the command line. For this reason, we make a Makefile. A Makefile
+  is like a recipe: it contains the instructions on how to make
+  our executable.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Makefile}
+  \lstinputlisting[style=customc]{Makefile}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Compiling and running}
+  To compile a program with a Makefile all you have to do is type ``make''.
+  To run you just type the name of the executable.
+\end{frame}
+
+\begin{frame}
+  \frametitle{In class assignment}
+  Work on your final project. Have a good Thanksgiving!
+\end{frame}
+
+\begin{frame}
+  \frametitle{Next time}
+  \begin{itemize}
+  \item Python programs
+  \end{itemize}
+  Work on your final project!
+\end{frame}
+
+\begin{frame}
+  \frametitle{HW 7 - Harmonic Motion due in one week}
+  Simulate a ball hanging from the ceiling by a spring, 
+  and include air resistance.
+  The force for this would look like the following:
+  \begin{equation*}
+    \vec{F} = m\vec{g} - bv^2\hat{v} - k\vec{d}
+  \end{equation*}
+  where $\vec{F}$ always points in the $y$ direction. Here,
+  gravity points down, $\hat{v}$ points in the direction
+  of the velocity, and $\vec{d}$ is the displacement from
+  equilibrium of the spring (i.e. distance from the starting position).
+  Simulate this with initial conditions $y(0)=0$ and $v(0)=0$.
+  You can quickly write this homework by modifying your dropping ball program.
+\end{frame}
+
+\end{document}
