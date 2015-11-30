@@ -1,0 +1,177 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{\usetheme{boxes}}
+
+\usepackage{array}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{relsize}
+\usepackage{ragged2e}
+\usepackage[T1]{fontenc}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{red},
+}
+\lstdefinestyle{custombash}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=bash,
+  basicstyle=\footnotesize\ttfamily,
+  showstringspaces=false,
+  commentstyle=\itshape\color{purple!40!black},
+  keywordstyle=\itshape\color{green!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+\lstdefinestyle{custompython}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=bash,
+  basicstyle=\footnotesize\ttfamily,
+  showstringspaces=false,
+  commentstyle=\itshape\color{purple!40!black},
+  keywordstyle=\itshape\color{green!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\usebackgroundtemplate{
+  \hbox to \paperwidth{\hfil\includegraphics[width=4in,
+      height=\paperheight]{wildcat_transparent.jpg}\hfil}
+}
+
+\title{PHYS 105 Lecture 15: Other languages and Python}
+\author{Tom McClintock \\
+	Dept. of Physics\\
+	University of Arizona
+}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Last time}
+  \begin{itemize}
+  \item Large Programs
+  \item Makefiles
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{This time}
+  \begin{itemize}
+  \item Other programming languages
+  \item Python
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Other programming languages}
+  There are dozens and dozens of programming languages. You will never use
+  more than a few of them. Some of the most popular are:
+  \begin{itemize}
+  \item C/C++
+  \item C\#
+  \item Python
+  \item Java
+  \item Matlab
+  \item Ruby
+  \item Fortran
+  \end{itemize}
+  Each language was designed with a different goal in mind. There is no
+  one language that is absolutely better than any other. 
+  \textit{The real skill in programming is knowing which language is the best to use for your project!}
+\end{frame}
+
+\begin{frame}
+  \frametitle{A programmers' Swiss army knife}
+  Roughly, these are what some of these languages are good at.
+  \begin{itemize}
+  \item C/C++/Fortran: intense number crunching, system optimization
+  \item Java: cross-platform stability, graphical user interfaces
+  \item Python: File I/O, data analysis, scripting
+  \end{itemize}
+  Today, we will learn how to use \textbf{Python}, a language which is
+  overtaking many others in the fields of physics and astronomy as
+  the most useful for data analysis.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Python}
+  Python is a lot more ``relaxed'' than C. Python is weakly-typed, in other
+  words the language figures out variable types for you. Also, the syntax
+  is less stringent. There are no ; or curly braces \{\}.\\
+  This class you will learn how to do some basic plotting using Python,
+  and see how quickly you can create a histogram from your old 
+  walker\_data.txt.
+\end{frame}
+
+
+\begin{frame}[fragile,allowframebreaks]
+  \frametitle{example.py}
+  \lstinputlisting[style=custompython]{example.py}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Running a python program}
+  To run a python program you just type ``python myprogram.py'' and it 
+  will run.\\
+  \vspace{12pt}
+  For the example program you should type ``python example.py''.
+  \\
+  \vspace{12pt}
+  Next, let's see how simple it is to make a histogram in python. Let's
+  use our old walker\_data.txt. You should copy it (with ``cp'') into the
+  directory you are currently working in.
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]
+  \frametitle{pyhist.py}
+  \lstinputlisting[style=custompython]{pyhist.py}
+\end{frame}  
+
+\begin{frame}
+  \frametitle{In class assignment}
+  Work on your final projects!\\ \textbf{They are due next week on December 9}.\\
+  Remember to add lots of comments!
+\end{frame}
+
+\begin{frame}
+  \frametitle{Next time}
+  \begin{itemize}
+  \item More python
+  \end{itemize}
+  Work on your final project!\\\textbf{They are due next week on December 9}.\\
+  Also...
+\end{frame}
+
+\begin{frame}
+  \frametitle{TCE Reports}
+  These are necessary! Please complete a Teacher-Course Evaluation at:
+  \href{http://tce.arizona.edu}{\nolinkurl{http://tce.arizona.edu}},
+  and then click on ``Students: Rate your courses online'' on the right side
+  of the page.
+\end{frame}
+
+\end{document}
