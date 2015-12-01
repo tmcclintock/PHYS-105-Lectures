@@ -1,0 +1,146 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{\usetheme{boxes}}
+
+\usepackage{array}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{relsize}
+\usepackage{ragged2e}
+\usepackage[T1]{fontenc}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{red},
+}
+\lstdefinestyle{custombash}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=bash,
+  basicstyle=\footnotesize\ttfamily,
+  showstringspaces=false,
+  commentstyle=\itshape\color{purple!40!black},
+  keywordstyle=\itshape\color{green!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+\lstdefinestyle{custompython}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=bash,
+  basicstyle=\footnotesize\ttfamily,
+  showstringspaces=false,
+  commentstyle=\itshape\color{purple!40!black},
+  keywordstyle=\itshape\color{green!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\usebackgroundtemplate{
+  \hbox to \paperwidth{\hfil\includegraphics[width=4in,
+      height=\paperheight]{wildcat_transparent.jpg}\hfil}
+}
+
+\title{PHYS 105 Lecture 16: More Python}
+\author{Tom McClintock \\
+	Dept. of Physics\\
+	University of Arizona
+}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Last time}
+  \begin{itemize}
+  \item Other programming languages
+  \item Python
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{This time}
+  \begin{itemize}
+  \item More Python
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Visualization}
+  A theme in this class is visualization. How can you visualize some data?
+  How can you simulate a process?\\
+  Python has fantastic facilities for visualizing things. In today's class
+  we will use a tool unavailable in philsplot, which is the gradient map.
+  In addition, we will see a quick and cool example of a 3D plot.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Gradient map}
+  A gradient map shows some kind of change over an area. The simple program
+  that follows animates a gradient map. Pretend that it shows heat flowing
+  from a heater, when in reality it is just a way to visualize a 2 dimensional
+  array.
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]
+  \frametitle{animation.py}
+  \lstinputlisting[style=custompython]{animation.py}
+\end{frame}
+
+\begin{frame}
+  \frametitle{3D plots}
+  In other languages, 3D plots are horrendously difficult to make.
+  The only other language that I know that can easily generate 3D plots
+  is MATLAB, but that language is proprietary (aka it costs \$).
+\end{frame}
+\begin{frame}
+  \frametitle{Python 3D plots}
+  In the following, you will visualize the following function in 3D:
+  \begin{equation*}
+    Z(x,y,t) = \left(1-\sqrt{x^2}\right)\cos(2\pi x+\phi(t)).
+  \end{equation*}
+  That is, the height of the function will be $Z$, while $x$ and $y$ are coordinates
+  in a horizontal plane. $Z$ is also a function of time $t$. There is also
+  a comment in the program that you can un-comment, in order to see the
+  equation
+  \begin{equation*}
+    Z(x,y,t) = \left(1-\sqrt{x^2+y^2}\right)\cos(2\pi x+\phi(t)).
+  \end{equation*}
+  Both $x$ and $y$ range from $[-1,1]$.
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]
+  \frametitle{wire3d.py}
+  \lstinputlisting[style=custompython]{wire3d.py}
+\end{frame}
+
+\begin{frame}
+  \frametitle{In class assignment}
+  Congrats on finishing the semester! Good luck in PHYS 305!\\
+  Please complete a Teacher-Course Evaluation at:
+  \href{http://tce.arizona.edu}{\nolinkurl{http://tce.arizona.edu}},
+  and then click on ``Students: Rate your courses online'' on the right side
+  of the page.
+\end{frame}
+
+\end{document}
