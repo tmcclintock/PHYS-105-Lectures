@@ -1,0 +1,150 @@
+These are brief notes that expound on some details about
+each of the lectures, such as points to keep in mind or details
+to stress. Also, it contains my (Tom) opinion on some of the
+in class assignments I assigned.
+
+OBJECTIVES
+My goal in this was to keep the class managable, cut out lessons and topics
+that I didn't think are worthwhile for a 100 level class (like dynamic memory,
+structs, sorting etc.). At the same time I tried to focus on the most 
+important parts and stress the mathematical uses of programming.
+For this reason I pushed numerical integration up to week 5.
+At the end of the semester I switch to Python to demonstrate how different
+languages have different strengths. These lectures could be rewritten for
+MATLAB or IDL, but those are both proprietary. At the end of the day, since
+this class only meets once per week, students are not likely doing
+any other programming, and there may be a large gap between 105 and 305,
+I believe the purpose of this class should be to build a foundation. To do
+so means focusing on the basics, as opposed to knowing advanced techniques
+that have been taught in PHYS 105 in the past.
+
+GENERAL NOTES:
+- I did NOT grade in class assignments.
+- I only told them how to log in from their own computers after 3 weeks,
+so that people got into the habit of coming to class.
+- Remember that this is a 1 credit class, not a weed-out class! It should
+not be difficult. I gave them plenty of help on HWs and on the project.
+- I printed integers with a %i instead of %d because it is easy to remember
+%i -> integer while %f -> float. Besides, if one wanted to print a hex number
+then %d doesn't work anyway.
+
+Lecture 1:
+- I refer to the command line as a the terminal. Just make sure if
+you use a different term for it you explain that you it means the same thing
+- Stress that in compilation, the output executable SHOULD NEVER END IN A .c.
+This is because if they write for instance "gcc myprog.c -o myprog.c" then
+the source code is deleted forever and replaced by the useless binary.
+
+Lecture 2:
+- The textbook is ENTIRELY OPTIONAL. Nobody should have to buy it, 
+especially since it is free.
+- Refer the students back to this lecture often to look up the terminal
+commands.
+
+Lecture 3:
+- Similar to last lecture, refer them back to this lecture to see how to
+cp, mv, and rm things.
+- Make sure the TA is familiar with the most common errors. Make him/her
+reproduce them prior to the class, such as missing semicolons, undeclared
+variables, messing up include statements etc.
+- Mention that "if" statements are how you can have a program run differently
+at different times. This is how a program can respond to user input!
+- Make sure your TA understands scoping rules.
+
+Lecture 4:
+- You will likely have to show how the binary numbers are added on the board.
+- Make sure to understand when larger (memory wise) variables are better. 
+Larger variables get better accuracy at the expense of space and speed.
+- For HW3 - The times when there are no roots are when the argument to the
+square root is negative (imaginary roots don't count!) or when a==0.
+- The first in class assignment is very difficult. Tell the students to
+mainly focus on the second assignment, and only do the first if they have time.
+- The second in class assignment should use two nested for loops.
+
+Lecture 5:
+- Stress that arrays are the main container for real scientific data, which
+is often simply a big list of numbers.
+
+Lecture 6:
+- I told people that if they like while loops more then they can use those,
+but I stick with for loops for the remainder of the classes.
+- The integral in the homework gives pi.
+
+Lecture 7:
+- Make sure that you and the TA understand "pass by value" vs "pass by 
+reference" so that you can explain the need of pointers. They aren't needed
+if a language is pass by reference!
+- Most students won't complete both in class assignments here. No big deal,
+since they don't actually need to use pointers past this point.
+
+Lecture 8:
+- As of this writing, the documentation for Philsplot isn't available. Email
+Phil Pinto and ask for the documentation. Apparently the pdf exists somewhere
+in faraday but I was unable to locate it.
+- Also, Phil is apparently updating PhilsPlot. If a new update rolls around
+then some of the graphical programs for this class may need to be updated as
+well.
+- If no seed is given, the random number generator (RNG) will use the default
+seed, which is set at the time the stdlib was compiled. Thus, every student
+will get the same "random numbers". In order to get a different seed everytime
+we would have to seed it based on the wallclock, which I didn't think was
+worth the effort to explain.
+- Explain to the students the power of an algorithm. Writing in English is
+much easier than writing code, so it is a very helpful tool to use before
+actually writing a program.
+
+Lecture 9:
+- Obviously, file output can be done quick and dirty using a pipe >>, but
+I wanted to demonstrate how it can be coded into a program.
+- The random walk data is used later in the semester, so make sure every
+student gets the in class program working correctly.
+- Draw parallels to printf() and scanf() to fprintf() and fscanf().
+
+Lecture 10:
+- Stress that to do animations, the students should never have to hard code in
+the locations to draw. It should follow a prescribed method and be implemented
+in loops.
+
+Lecture 11:
+- Apparently not many students understand vector notation at this point. You
+will likely have to explain to them explicitely how this translates into the
+code (e.g. m\vec{g} becomes -m*g since the vector g points down).
+- Stress that for the EoM, everything but the force is completely general.
+If they want to simulat some other process they just need to change the
+force (and initial conditions) and that's it!
+- The force function is written with many inputs because, in general, the
+force could be some complicated function of the kinematic variables.
+- For the in class assignment explain that the change they make should occur
+inside the Force() function, not in the main.
+- The hat vector confused many people. Explain that the -\hat{v} means the
+friction force points in the opposite direction of the velocity. This is
+achieved with an if/else statement.
+- For some reason on the homework many students thought the photon is affected
+by gravity. Be ready for this and reiterate that the velocity should be 
+constant and the trajectory is all straight lines.
+
+Lecture 12:
+- For the in class assignment, the equation they actually implement is the 
+right most equality.
+
+Lecture 13:
+- Not much to say here.
+
+Lecture 14:
+- Every whitespace is NECESSARY in the Makefile.
+- The indentation in the Makefile MUST BE A TAB CHARACTER, as opposed to
+several spaces. This is a requirement.
+- I only explained the top few lines of the Makefile and not the rules, since
+nobody actually knows how Makefiles work.
+
+Lecture 15:
+- This is written in Python 2. One day in the future it could be updated to 
+Python 3.
+- Many students will have trouble copying their walker_data.txt into the 
+current folder. Take some time to help them all copy it over (or find it at 
+all).
+- There is a change in vocabulary during this lecture. What were previously
+called "libraries" are now called "modules".
+
+Lecture 16:
+- These examples were pulled from the matplotlib thumbnail gallery.

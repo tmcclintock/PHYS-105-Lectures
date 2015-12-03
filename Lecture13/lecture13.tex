@@ -184,8 +184,9 @@
       initial velocity.
     \item A good check on how realistic a simulation does 
       is by checking conserved
-      quantities. Have your program print out the potential and kinetic energy
-      every ten steps. Are these quantities conserved?
+      quantities. Have your program print out the potential, kinetic, and
+      total energies
+      every ten steps. Is the total energy conserved?
   \end{enumerate}
 \end{frame}
 
@@ -204,14 +205,14 @@
   and include air resistance.
   The force for this would look like the following:
   \begin{equation*}
-    \vec{F} = m\vec{g} - bv^2\hat{v} - k\vec{d}
+    F_y = -mg - bv^2\frac{v_y}{v} - ky
   \end{equation*}
   where $\vec{F}$ always points in the $y$ direction. Here,
-  gravity points down, $\hat{v}$ points in the direction
-  of the velocity, and $\vec{d}$ is the displacement from
-  equilibrium of the spring (i.e. distance from the starting position).
-  Simulate this with initial conditions $y(0)=0$ and $v(0)=0$.
-  You can quickly write this homework by modifying your dropping ball program.
+  $y$ is the displacement from the origin.
+  Simulate this with initial conditions $y(0)=+1.0$ and $v(0)=-1.0$, 
+  with constants of $b=0.1$ and $k = 20.0$.
+  You can quickly write this homework by modifying your projectile motion
+  program.
 \end{frame}
 
 \end{document}
